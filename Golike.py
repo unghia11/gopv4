@@ -66,7 +66,7 @@ print("\033[1;31m[\033[1;37m<>\033[1;31m] \033[1;37m=> \033[1;32mNhập\033[1;36
 if chon == '1.1' :  
     exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/refs/heads/main/6.1.py').text)
 if chon == '1.2' :
-    exec(requests.get('https://raw.githubusercontent.com/Khanh23047/Golike-ig/main/p.py').text)
+    exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/refs/heads/main/6.2.py').text)
 if chon == '1.3' :
      exec(requests.get('https://raw.githubusercontent.com/Khanh23047/Golike-Twitter-/main/p.py').text)
 else:
