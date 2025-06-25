@@ -216,7 +216,7 @@ if chon == '5.7' :
    exec(requests.get('https://raw.githubusercontent.com/Khanh23047/Encode-ejuly-DUYKHANH/main/encode.py').text)
    #tool golike
 if chon == '6.1' :  
-    exec(requests.get('https://raw.githubusercontent.com/Khanh23047/Golike/main/golike.py').text)
+    exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/refs/heads/main/6.1.py').text)
 if chon == '6.2' :
     exec(requests.get('https://raw.githubusercontent.com/Khanh23047/Golike-ig/main/p.py').text)
 if chon == '6.3' :
