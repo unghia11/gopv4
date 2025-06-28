@@ -60,15 +60,18 @@ banner()
 print (Colorate.Diagonal(Colors.blue_to_purple, "╔═════════════════════════╗"))
 print (Colorate.Diagonal(Colors.blue_to_purple, "║Tool Aotu Golike         ║"))
 print (Colorate.Diagonal(Colors.blue_to_purple, "╚═════════════════════════╝"))
-print("\033[1;31m[\033[1;37m<>\033[1;31m] \033[1;37m=> \033[1;32mNhập\033[1;36m Số \033[1;31m[\033[1;33m1.1\033[1;31m] \033[1;32mTool Auto TikTok")
-print("\033[1;31m[\033[1;37m<>\033[1;31m] \033[1;37m=> \033[1;32mNhập\033[1;36m Số \033[1;31m[\033[1;33m1.2\033[1;31m] \033[1;32mTool Auto Instagram ")
-print("\033[1;31m[\033[1;37m<>\033[1;31m] \033[1;37m=> \033[1;32mNhập\033[1;36m Số \033[1;31m[\033[1;33m1.3\033[1;31m] \033[1;32mTool Auto Twitter")
+print("\033[1;31m[\033[1;37m<>\033[1;31m] \033[1;37m=> \033[1;32mNhập\033[1;36m Số \033[1;31m[\033[1;33m1.1\033[1;31m] \033[1;32mTool Auto TikTok( V1 )")
+print("\033[1;31m[\033[1;37m<>\033[1;31m] \033[1;37m=> \033[1;32mNhập\033[1;36m Số \033[1;31m[\033[1;33m1.2\033[1;31m] \033[1;32mTool Auto TikTok( ADB )")
+print("\033[1;31m[\033[1;37m<>\033[1;31m] \033[1;37m=> \033[1;32mNhập\033[1;36m Số \033[1;31m[\033[1;33m1.3\033[1;31m] \033[1;32mTool Auto Instagram ")
+print("\033[1;31m[\033[1;37m<>\033[1;31m] \033[1;37m=> \033[1;32mNhập\033[1;36m Số \033[1;31m[\033[1;33m1.4\033[1;31m] \033[1;32mTool Auto Twitter")
 chon = str(input('\033[1;31m[\033[1;37m<>\033[1;31m] \033[1;37m=> \033[1;32mNhập\033[1;36m Số \033[1;37m: \033[1;33m'))
 if chon == '1.1' :  
     exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/refs/heads/main/6.1.py').text)
 if chon == '1.2' :
-    exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/refs/heads/main/6.2.py').text)
+    exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/refs/heads/main/adb_tt.py').text)
 if chon == '1.3' :
+    exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/refs/heads/main/6.2.py').text)
+if chon == '1.4' :
      exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/refs/heads/main/6.3.py').text)
 else:
   exit()
