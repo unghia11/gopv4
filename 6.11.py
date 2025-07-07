@@ -132,10 +132,10 @@ while True:
         ads_id = nhanjob['data']['id']
         link = nhanjob['data']['link']
         object_id = nhanjob['data']['object_id']
+        webbrowser.open(link)
         if nhanjob['data']['type'] != 'follow':
             baoloi(ads_id, object_id, account_id, nhanjob['data']['type'])
             continue
-            webbrowser.open(link)
         for remaining_time in range(delay, -1, -1):
             colors = ['\x1b[1;37mU\x1b[1;36mN\x1b[1;35mG\x1b[1;32mH\x1b[1;31mI\x1b[1;34mA \x1b[1;33mT\x1b[1;31mO\x1b[1;34mO\x1b[1;33mL\x1b[1;31m\x1b[1;32m', '\x1b[1;34mU\x1b[1;31mN\x1b[1;37mG\x1b[1;36mH\x1b[1;32mI\x1b[1;35mA \x1b[1;37mT\x1b[1;36mO\x1b[1;32mO\x1b[1;35mL\x1b[1;37m\x1b[1;31m\x1b[1;32m', '\x1b[1;31mU\x1b[1;37mN\x1b[1;36mG\x1b[1;33mH\x1b[1;35mI\x1b[1;32mA \x1b[1;34mT\x1b[1;31mO\x1b[1;37mO\x1b[1;36mL\x1b[1;33m\x1b[1;31m\x1b[1;32m', '\x1b[1;32mU\x1b[1;33mN\x1b[1;34mG\x1b[1;35mH\x1b[1;36mI\x1b[1;37mA \x1b[1;36mT\x1b[1;32mO\x1b[1;33mO\x1b[1;31mL\x1b[1;31m\x1b[1;32m', '\x1b[1;37mU\x1b[1;34mN\x1b[1;35mG\x1b[1;36mH\x1b[1;32mI\x1b[1;33mA \x1b[1;31mT\x1b[1;34mO\x1b[1;35mO\x1b[1;36mL\x1b[1;31m\x1b[1;32m', '\x1b[1;34mU\x1b[1;33mN\x1b[1;37mG\x1b[1;35mH\x1b[1;31mI\x1b[1;36mA \x1b[1;36mT\x1b[1;35mO\x1b[1;31mO\x1b[1;37mL\x1b[1;31m\x1b[1;32m', '\x1b[1;36mU\x1b[1;35mN\x1b[1;31mG\x1b[1;34mH\x1b[1;37mI\x1b[1;35mA \x1b[1;32mT\x1b[1;33mO\x1b[1;34mO\x1b[1;35mL\x1b[1;31m\x1b[1;32m']
             for color in colors:
