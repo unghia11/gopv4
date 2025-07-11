@@ -79,10 +79,10 @@ if chon == '00' :
     exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/4f46ff6d1d92d529341c6185993a505692b8f480/00.py').text)
     #tool tđs
 if chon == '1.1' :
-    exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/refs/heads/main/1.2.py').text)
+    exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/refs/heads/main/1.1.py').text)
 if chon == '1.2':
     exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/refs/heads/main/1.2.py').text)
 if chon == '1.3' :
-     
+     exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/refs/heads/main/1.3.py').text)
 else :
      exit()
