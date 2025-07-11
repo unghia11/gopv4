@@ -122,9 +122,9 @@ def delay(dl):
 
 def chuyen(link, may):
 	if may == 'mb':
-		os.system(f'xdg-open {link}')
+		webbrowser.open(link)
 	else:
-		os.system(f'cmd /c start {link}')
+		webbrowser.open(link)
 
 
 
