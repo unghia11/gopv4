@@ -1,6 +1,7 @@
 #Coded by UÔNG VĂN NGHIA
 #YTB: ᰔᩚυиɢнĩα
 import os
+import webbrowser
 from time import sleep
 from datetime import datetime
 
@@ -244,7 +245,7 @@ if check_log == 'success':
 			for job in list_job['data']:
 				uid = job['id']
 				link = job['link']
-				os.system(f'termux-open-url {link}')
+				webbrowser.open(link)
 				check_duyet = duyet_job(type_duyet, token_tds, uid)
 				
 				if check_duyet != 'error':
@@ -261,7 +262,7 @@ if check_log == 'success':
 					break
 				else:
 					for i in range(delay,-1,-1):
-						print(Colors.green + 'NDK: '+str(i)+' giây',end=('\r'))
+						print(Colors.green + 'UNGHIA: '+str(i)+' giây',end=('\r'))
 						sleep(1)
 
 		if dem_tong == max_job:
