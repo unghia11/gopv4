@@ -16,6 +16,7 @@ from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
 import requests, json
 import os
 import sys
+import webbrowser
 from sys import platform
 from time import sleep
 from datetime import datetime
