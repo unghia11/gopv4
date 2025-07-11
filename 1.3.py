@@ -16,6 +16,7 @@ from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
 import requests, json
 import os
 import sys
+import webbrowser
 from sys import platform
 from time import sleep
 from datetime import datetime
@@ -115,7 +116,7 @@ class TraoDoiSub_Api (object):
 def delay(dl):
   try:
     for i in range(dl, -1, -1):
-       print(f'{vang}[{trang}REVIEWTOOL{vang}][{trang}'+str(i)+vang+']           ',end='\r')
+       print(f'{vang}[{trang}UNGHIATOOL{vang}][{trang}'+str(i)+vang+']           ',end='\r')
        sleep(1)
   except:
      sleep(dl)
@@ -123,9 +124,9 @@ def delay(dl):
 
 def chuyen(link, may):
 	if may == 'mb':
-		os.system(f'xdg-open {link}')
+		webbrowser.open(link)
 	else:
-		os.system(f'cmd /c start {link}')
+		webbrowser.open(link)
 
 
 
