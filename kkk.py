@@ -1,3 +1,3 @@
 import webbrowser
-url = 'https://vm.tiktok.com/ZSHbEK2p69eEj-BbfzA/'
+url = 'https://www.tiktok.com/@/video/7518612048578645266/?_r=1&_d=secCgYIASAHKAESPgo8aVCaYXMVigruoERhjsBX6f6drFc8zqs1dvG8LTygpbcM9ziReo%2B%2Fe6G2VmNp3J1HbIxpz7j3PTyJmQypGgA%3D&_svg=1&checksum=55de2237c35054ceb769e905980ccb5ac2752990eb3daeaecfe4d1ae957fabdc&lang=vi-VN&mid=7518612081592077073&preview_pb=0&region=VN&sec_user_id=MS4wLjABAAAANCTFsQ3WiqcNP0-LTPaUXu9jiSiz0_cPX7BCz_SEXfk7eYZM9rIC581O8bYouw7K&share_app_id=1340&share_item_id=7518612048578645266&share_link_id=e7702513-1431-423f-9823-20fb052d1710&share_scene=2&sharer_language=vi&source=h5_t&timestamp=1751945264&u_code=e81mf95k2h436f&ugbiz_name=Main&user_id=7233717997662635015&utm_campaign=client_share&utm_source=copy'
 webbrowser.open(url)
