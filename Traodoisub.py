@@ -76,7 +76,7 @@ chon = str(input('\033[1;31m[\033[1;37m<>\033[1;31m] \033[1;37m=> \033[1;32mNháº
 
 
 if chon == '00' :
-    exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/4f46ff6d1d92d529341c6185993a505692b8f480/00.py').text)
+    exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/refs/heads/main/00.py').text)
     #tool tÄ‘s
 if chon == '1.1' :
     exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/refs/heads/main/1.1.py').text)
