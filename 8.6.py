@@ -71,7 +71,7 @@ def tLx6cpsx():
         return None
 
 def f9kSLNSXl():
-    fake = Faker()
+    fake = Faker('vi_VN')
     mail_domains = tLx6cpsx()
     if mail_domains:
         domain = random.choice(mail_domains)['domain']
