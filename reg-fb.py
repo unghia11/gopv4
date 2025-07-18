@@ -1,3 +1,4 @@
+import requests
 from time import sleep
 print('>>loading')
 sleep(5)
