@@ -2,8 +2,6 @@ import requests
 import random
 import string
 import hashlib,os
-import sys
-from time import sleep
 
 trang = "\033[1;37m\033[1m"
 xanh_la = "\033[1;32m\033[1m"
