@@ -2,6 +2,7 @@ import requests
 import random
 import string
 import hashlib,os
+import sys
 from time import sleep
 
 trang = "\033[1;37m\033[1m"
@@ -163,3 +164,4 @@ def create_accounts(num_accounts):
 # Sử dụng: gọi hàm create_accounts với số lượng tài khoản cần tạo
 num_accounts = int(input(f'{vua}[+] Muốn bao nhiêu tài khoản: {vang}'))
 create_accounts(num_accounts)
+sys.exit()
