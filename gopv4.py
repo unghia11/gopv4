@@ -248,7 +248,7 @@ if chon == '8.4' :
 if chon == '8.5' :
 	exec(requests.get('https://raw.githubusercontent.com/Khanh23047/L-c-Link-T-File/main/10.py').text)
 if chon == '8.6' :
-  exec(requests.get('https://raw.githubusercontent.com/Khanh23047/Reg-fb/main/10.py').text)
+  exec(requests.get('https://raw.githubusercontent.com/unghia11/gopv4/refs/heads/main/8.6.py').text)
   #tool tiện ích 
 if chon == '9.1' :   
    exec(requests.get('https://raw.githubusercontent.com/Khanh23047/May-tinh/main/0.py').text)
