@@ -49,6 +49,7 @@ def top10_vth(s,headers,Coin):
         top10_vth(s,headers,Coin)
 def load_data_vth():
     if os.path.exists('data-xw-vth.txt'):
+        print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
         prints(0, 255, 243,'Bạn có muốn sử dụng thông tin đã lưu không? (y/n): ',end='')
         x=input()
         if x=='y':
@@ -58,20 +59,23 @@ def load_data_vth():
     str="""
 Hướng dẫn lấy link:
     0. Mở chrome
-    1. Truy cập website xworld.io
+    1. Truy cập website xworld.info
     2. Đăng nhập vào tài khoản
     3. Tìm và nhấp vào Vua thoát hiểm
-    4. Nhấn lâp jtucs truy cập
+    4. Nhấn lập tức truy cập
     5. Sao chép link website và dán vào đây
 """
     prints(218, 255, 125,str)
     prints(247, 255, 97,"═" * 47)
+    print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
     prints(125, 255, 168,'📋Nhập liên kết của bạn:',end=' ')
     link=input()
     user_id=link.split('&')[0].split('?userId=')[1]
     user_secretkey=link.split('&')[1].split('secretKey=')[1]
-    prints(218, 255, 125,f'    Your user id is {user_id}')
-    prints(218, 255, 125,f'    Your user secret key is {user_secretkey}')
+    print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
+    prints(218, 255, 125,f'    User id của bạn là {user_id}')
+    print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
+    prints(218, 255, 125,f'    User secret key của bạn là {user_secretkey}')
     json_data={
         'user-id':user_id,
         'user-secret-key':user_secretkey,
@@ -84,22 +88,28 @@ def kiem_tra_kq_vth(s,headers,ki,bot_chon,Coin,tg):
         start_time=time.time()
         while True:
             if time.time()<=tg+60:
+                print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
                 prints(255,255,0,f'Đang chờ kết quả {time.time()-start_time:.0f}...',end='\r')
                 time.sleep(1)
             data_top10=top10_vth(s,headers,Coin)
+            print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
             prints(255,255,0,f'Đang chờ kết quả {time.time()-start_time:.0f}...',end='\r')
             if data_top10[0][0]==int(ki):
+                print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
                 prints(15, 87, 219,f'Kẻ giết người đã vào phòng số {data_top10[1][0]} : {room_names[data_top10[1][0]]}')
                 if int(bot_chon)==int(data_top10[1][0]):
+                    print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
                     prints(255, 0, 38,'Bạn thua rồi. Chúc bạn may mắn lần sau nhé...')
                     time.sleep(10)
                     return False,time.time()
                 else:
+                    print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
                     prints(0, 255, 102,' Xin chúc mừng, bạn đã thắng')
                     time.sleep(10)
                     return True,time.time()
             time.sleep(1)
     except Exception as e:
+        print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
         prints(255,0,0,f'Lỗi khi kiểm tra kết quả: {e}')
         return kiem_tra_kq_vth(s,headers,ki,bot_chon,Coin,tg)
 def chon_phong1(data_top10,data_top100):
@@ -144,11 +154,14 @@ def bet_vth(s,user_id,user_secretkey,room_id,Coin,bet_amount):
             'bet_amount': float(bet_amount),
         }
         response = s.post('https://api.escapemaster.net/escape_game/bet', headers=headers, json=json_data).json()
+        print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
         prints(255,255,0,response)
         if response['code']==0 and response['msg']=='ok':
-            prints(0, 149, 255,f' Đã đặt {bet_amount} {Coin} vào phóng số {room_id}')
+            print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
+            prints(0, 149, 255,f' Đã đặt {bet_amount} {Coin} vào phòng số {room_id}')
             return bet_amount
         else:
+            print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
             prints(255,0,0,response['msg'])
             return bet_amount
     except Exception as e:
@@ -169,14 +182,20 @@ def user_asset(s,headers):
         }
         return asset
     except Exception as e:
+        print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
         prints(255,0,0,f'Error when getting balance: {e}')
+        print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
         prints(255,0,0,f'Vui lòng lấy lại link và thử lại')
         return user_asset(s,headers)
 def print_stats(s, stats, headers, Coin):
     asset = user_asset(s, headers)
+    print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
     prints(5,255,0,f'{asset['USDT']:.2f}USDT - {asset['WORLD']:.2f}WORLD - {asset['BUILD']:.2f}BUILD')
+    print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
     prints(66, 239, 245,F'Thắng: {stats['win']}/{stats['win']+stats['lose']}')
+    print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
     prints(66, 239, 245,F'Lời: {asset[Coin]-stats['asset0']}')
+    print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
     prints(66, 239, 245,F'Chuỗi thắng: {stats['streak']} (MAX: {stats['max_streak']})')
     total_games = stats['win'] + stats['lose']
     win_rate = (stats['win'] / total_games * 100) if total_games > 0 else 0
@@ -264,6 +283,15 @@ def top100_vth(s,headers,Coin):
         prints(247, 30, 30,f'LỖI khi lấy dữ liệu {e}')
         time.sleep(5)
         return top100_vth(s,headers,Coin)
+def get_ip_address():
+    try:
+        response = requests.get('https://api.ipify.org?format=json')
+        ip_data = response.json()
+        ip_address = ip_data['ip']
+        return ip_address
+    except Exception as e:
+        print(f"Lỗi khi lấy địa chỉ IP: {e}")
+        return None
 def banner():
     banner_text = """
     ╔═════════════════════════════════════════╗
@@ -286,14 +314,15 @@ def banner():
         r, g, b = 255, 255, 255
         print()
 
-    prints(247, 255, 97, "✨" + "═" * 60 + "✨")
-    prints(32, 230, 151, "🌟 XWORLD AUTOMATION TOOL 🌟".center(62))
-    prints(247, 255, 97, "═" * 62)
 
     prints(247, 255, 97, "═" * 62)
     print()
-def main():
-    banner()
+def main(ip_address):
+    if ip_address:
+        banner()
+        print(f"\033[1;97m[\033[1;91m<>\033[1;97m] \033[1;31mĐịa chỉ IP : {ip_address}")
+    else:
+        print("Không thể lấy địa chỉ IP của thiết bị.")
     s=requests.Session()
     data=load_data_vth()
     headers = {
@@ -318,12 +347,14 @@ def main():
         'xb-language': 'vi-VN',
     }
     asset=user_asset(s,headers)
+    print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
     prints(5,255,0,f'BALANCE: {asset['USDT']:.2f}USDT - {asset['WORLD']:.2f}WORLD - {asset['BUILD']:.2f}BUILD')
     prints(5,255,0,"""
         1. BUILD
         2. USDT
         3. WORLD
         """)
+    print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
     prints(255,255,0,f'Chọn loại tiền bạn muốn chơi (1/2/3): ',end='')
     Coin=input()
     if Coin=='1':
@@ -332,11 +363,16 @@ def main():
         Coin='USDT'
     elif Coin=='3':
         Coin='WORLD'
+    print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
     prints(255,255,0,f'Nhập số lương {Coin} để đặt (Gợi ý: {asset[Coin]/111:.2f}): ',end='')
     bet_amount0=float(input())
+    print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
     prints(255,255,0,f'Ví dụ khi bạn đặt hệ số cược là 10 thì nếu ván này bạn đặt 100 build và đã thua thì ván sau mức cược sẽ tăng x10, sẽ đặt 1000 build')
+    print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
     trap=float(input('Nhập hệ số cược sau khi thua: '))
+    print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
     delay1=int(input('Sau bao nhiêu ván thì tạm nghỉ (Nhập 999 nếu không muốn tạm nghỉ): '))
+    print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
     delay2=int(input(f'Sau {delay1} ván thì tạm nghỉ bao nhiêu ván (Nhập 0 nếu không muốn nghỉ): '))
     hisory=[]
     stats={
@@ -359,6 +395,7 @@ def main():
             bot_chon=chon_phong(data10,data100,hisory,trap)
             ki=data10[0][0]+1
             print_stats(s,stats,headers,Coin)
+            print('\033[1;97m[\033[1;91m<>\033[1;97m]',end=' ')
             prints(5,255,0,f'Dự đoán cho kì {ki} : {bot_chon[0]} - {room_names[int(bot_chon[0])]}')
             cycle = delay1 + delay2
             pos = (tong - 1) % cycle
@@ -382,5 +419,5 @@ def main():
         except KeyboardInterrupt:
             prints(5,255,0,f'Bạn đã dùng chương trình')
             exit(0)
-
-main()
+ip_address=get_ip_address()
+main(ip_address)
